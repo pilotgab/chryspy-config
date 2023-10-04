@@ -19,4 +19,4 @@ spec:
         image: captaingab/chrispyimg:${{github.sha}}
         ports:
         - name: chryspyimg-port
-          containerPort: 8080
+          containerPort: 80
