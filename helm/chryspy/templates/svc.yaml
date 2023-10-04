@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chryspyapp
+spec:
+  ports:
+  - port: 80
+    targetPort: chryspyimg-port
+    protocol: TCP
+  selector: 
+       app: chryspyapp
+  type: LoadBalancer
