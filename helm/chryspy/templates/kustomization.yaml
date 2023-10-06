@@ -1,0 +1,6 @@
+resources:
+- dep.yaml
+
+images:
+- name: captaingab/chrispyimg
+  newTag: $(GITHUB_SHA)
