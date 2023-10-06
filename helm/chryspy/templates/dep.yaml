@@ -13,17 +13,13 @@ spec:
     metadata:
       labels:
         app: chryspyapp
-        github-sha: "${{ github.sha }}"
+        github-sha: "latest"
     spec:
       containers:
       - name: chryspyapp
-        image: captaingab/chrispyimg:${{ github.sha }}
+        image: captaingab/chrispyimg:latest
         ports:
         - name: chryspyimg-port
           containerPort: 80
-        env:
-        - name: GITHUB_SHA
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.labels['github-sha']
+      
        
