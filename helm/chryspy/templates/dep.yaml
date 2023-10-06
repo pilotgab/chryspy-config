@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: chryspyapp
-        image: captaingab/chrispyimg:$GITHUB_SHA
+        image: captaingab/chrispyimg:$(GITHUB_SHA)
         ports:
         - name: chryspyimg-port
           containerPort: 80
