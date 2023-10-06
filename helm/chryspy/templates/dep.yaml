@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: chryspyapp
-        image: captaingab/chrispyimg:latest
+        image: captaingab/chrispyimg:18dda6a5706feb0fd17f5ff1bf7f1f9b45a0b1ec
         ports:
         - name: chryspyimg-port
           containerPort: 80
