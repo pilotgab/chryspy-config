@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: chryspyapp
-        github-sha: "$(GITHUB_SHA)"
+        github-sha: "${{ github.sha }}"
     spec:
       containers:
       - name: chryspyapp
