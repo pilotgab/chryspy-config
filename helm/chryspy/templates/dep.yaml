@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: chryspyapp
+        github-sha: "placeholder"
     spec:
       containers:
       - name: chryspyapp
