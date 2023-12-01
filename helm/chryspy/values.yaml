@@ -8,7 +8,7 @@ image:
   repository: captaingab/chrispyimg
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: cedbc2f32aa7dd321a9186fc80a2406feb91293a
+  tag: 1a59710deb91b77dbe524bf1694139d224589fa2
 containerPort: 80
 targetPort: 80
 
