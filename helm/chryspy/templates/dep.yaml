@@ -1,24 +1,23 @@
+# templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chryspyapp
-  labels: 
-    app: chryspyapp
+  name: {{ include "chryspyapp-chart.fullname" . }}
+  labels:
+    {{- include "chryspyapp-chart.labels" . | nindent 4 }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: chryspyapp
+      {{- include "chryspyapp-chart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: chryspyapp
+        {{- include "chryspyapp-chart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-      - name: chryspyapp
-        image: captaingab/chrispyimg:latest 
-        ports:
-        - name: chryspyimg-port
-          containerPort: 80
-      
-       
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - name: chryspyimg-port
+              containerPort: {{ .Values.containerPort }}

@@ -1,12 +1,12 @@
+# templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: chryspyapp
+  name: {{ include "chryspyapp-chart.fullname" . }}
 spec:
   ports:
-  - port: 80
-    targetPort: chryspyimg-port
-    protocol: TCP
-  selector: 
-       app: chryspyapp
-  type: LoadBalancer
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.targetPort }}  
+  selector:
+    {{- include "chryspyapp-chart.selectorLabels" . | nindent 4 }}
+  type: {{ .Values.service.type }}
